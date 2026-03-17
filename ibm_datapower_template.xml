@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>7.0</version>
+    <date>2024-03-17T12:00:00Z</date>
+    <groups>
+        <group>
+            <name>IBM</name>
+        </group>
+    </groups>
+    <templates>
+        <template>
+            <uuid>6ba7b810-9dad-11d1-80b4-00c04fd430c8</uuid>
+            <template>IBM DataPower SNMP</template>
+            <name>IBM DataPower SNMP</name>
+            <description>Шаблон для мониторинга IBM DataPower через SNMP</description>
+            <groups>
+                <group>
+                    <name>IBM</name>
+                </group>
+            </groups>
+            <items>
+                <!-- Системная информация -->
+                <item>
+                    <uuid>6ba7b810-9dad-11d1-80b4-00c04fd430c9</uuid>
+                    <name>DataPower: Версия ПО</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>.1.3.6.1.4.1.14685.3.1.4.1</snmp_oid>
+                    <key>datapower.version</key>
+                    <delay>1h</delay>
+                    <history>30d</history>
+                    <trends>0</trends>
+                    <status>0</status>
+                    <value_type>TEXT</value_type>
+                    <description>Версия программного обеспечения DataPower</description>
+                </item>
+                <item>
+                    <uuid>6ba7b810-9dad-11d1-80b4-00c04fd430d0</uuid>
+                    <name>DataPower: Серийный номер</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>.1.3.6.1.4.1.14685.3.1.4.14</snmp_oid>
+                    <key>datapower.serial</key>
+                    <delay>1h</delay>
+                    <history>30d</history>
+                    <trends>0</trends>
+                    <status>0</status>
+                    <value_type>TEXT</value_type>
+                    <description>Серийный номер устройства</description>
+                </item>
+                <item>
+                    <uuid>6ba7b810-9dad-11d1-80b4-00c04fd430d1</uuid>
+                    <name>DataPower: Uptime</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>.1.3.6.1.4.1.14685.3.1.3.6</snmp_oid>
+                    <key>datapower.uptime</key>
+                    <delay>5m</delay>
+                    <history>30d</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>FLOAT</value_type>
+                    <units>uptime</units>
+                    <description>Время работы устройства с момента последней загрузки</description>
+                </item>
+                
+                <!-- CPU метрики -->
+                <item>
+                    <uuid>6ba7b810-9dad-11d1-80b4-00c04fd430d2</uuid>
+                    <name>DataPower: CPU load 10s</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>.1.3.6.1.4.1.14685.3.1.14.1</snmp_oid>
+                    <key>datapower.cpu.10s</key>
+                    <delay>1m</delay>
+                    <history>7d</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>FLOAT</value_type>
+                    <units>%</units>
+                    <description>Загрузка CPU за последние 10 секунд</description>
+                </item>
+                <item>
+                    <uuid>6ba7b810-9dad-11d1-80b4-00c04fd430d3</uuid>
+                    <name>DataPower: CPU load 1m</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>.1.3.6.1.4.1.14685.3.1.14.2</snmp_oid>
+                    <key>datapower.cpu.1m</key>
+                    <delay>1m</delay>
+                    <history>7d</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>FLOAT</value_type>
+                    <units>%</units>
+                    <description>Средняя загрузка CPU за 1 минуту</description>
+                </item>
+                <item>
+                    <uuid>6ba7b810-9dad-11d1-80b4-00c04fd430d4</uuid>
+                    <name>DataPower: CPU load 10m</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>.1.3.6.1.4.1.14685.3.1.14.3</snmp_oid>
+                    <key>datapower.cpu.10m</key>
+                    <delay>1m</delay>
+                    <history>7d</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>FLOAT</value_type>
+                    <units>%</units>
+                    <description>Средняя загрузка CPU за 10 минут</description>
+                </item>
+                
+                <!-- Память -->
+                <item>
+                    <uuid>6ba7b810-9dad-11d1-80b4-00c04fd430d5</uuid>
+                    <name>DataPower: Memory usage %</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>.1.3.6.1.4.1.14685.3.1.5.1</snmp_oid>
+                    <key>datapower.memory.pct</key>
+                    <delay>1m</delay>
+                    <history>7d</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>FLOAT</value_type>
+                    <units>%</units>
+                    <description>Процент использования памяти</description>
+                </item>
+                <item>
+                    <uuid>6ba7b810-9dad-11d1-80b4-00c04fd430d6</uuid>
+                    <name>DataPower: Memory total</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>.1.3.6.1.4.1.14685.3.1.5.2</snmp_oid>
+                    <key>datapower.memory.total</key>
+                    <delay>5m</delay>
+                    <history>30d</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>UNSIGNED</value_type>
+                    <units>B</units>
+                    <description>Общий объем памяти</description>
+                </item>
+                <item>
+                    <uuid>6ba7b810-9dad-11d1-80b4-00c04fd430d7</uuid>
+                    <name>DataPower: Memory used</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>.1.3.6.1.4.1.14685.3.1.5.3</snmp_oid>
+                    <key>datapower.memory.used</key>
+                    <delay>1m</delay>
+                    <history>7d</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>UNSIGNED</value_type>
+                    <units>B</units>
+                    <description>Используемая память</description>
+                </item>
+                <item>
+                    <uuid>6ba7b810-9dad-11d1-80b4-00c04fd430d8</uuid>
+                    <name>DataPower: Memory free</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>.1.3.6.1.4.1.14685.3.1.5.4</snmp_oid>
+                    <key>datapower.memory.free</key>
+                    <delay>1m</delay>
+                    <history>7d</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>UNSIGNED</value_type>
+                    <units>B</units>
+                    <description>Свободная память</description>
+                </item>
+                
+                <!-- TCP соединения -->
+                <item>
+                    <uuid>6ba7b810-9dad-11d1-80b4-00c04fd430d9</uuid>
+                    <name>DataPower: TCP established</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>.1.3.6.1.4.1.14685.3.1.12.1</snmp_oid>
+                    <key>datapower.tcp.established</key>
+                    <delay>1m</delay>
+                    <history>7d</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>UNSIGNED</value_type>
+                    <description>Количество установленных TCP соединений</description>
+                </item>
+                <item>
+                    <uuid>6ba7b810-9dad-11d1-80b4-00c04fd430e0</uuid>
+                    <name>DataPower: TCP listen</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>.1.3.6.1.4.1.14685.3.1.12.10</snmp_oid>
+                    <key>datapower.tcp.listen</key>
+                    <delay>1m</delay>
+                    <history>7d</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>UNSIGNED</value_type>
+                    <description>Количество TCP сокетов в состоянии LISTEN</description>
+                </item>
+                <item>
+                    <uuid>6ba7b810-9dad-11d1-80b4-00c04fd430e1</uuid>
+                    <name>DataPower: TCP timewait</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>.1.3.6.1.4.1.14685.3.1.12.6</snmp_oid>
+                    <key>datapower.tcp.timewait</key>
+                    <delay>1m</delay>
+                    <history>7d</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>UNSIGNED</value_type>
+                    <description>Количество TCP соединений в состоянии TIME_WAIT</description>
+                </item>
+            </items>
+            
+            <!-- Триггеры -->
+            <triggers>
+                <trigger>
+                    <uuid>6ba7b810-9dad-11d1-80b4-00c04fd430e2</uuid>
+                    <expression>last(/IBM DataPower SNMP/datapower.cpu.1m)&gt;80</expression>
+                    <name>Высокая загрузка CPU на DataPower</name>
+                    <priority>HIGH</priority>
+                    <description>Загрузка CPU превышает 80%</description>
+                </trigger>
+                <trigger>
+                    <uuid>6ba7b810-9dad-11d1-80b4-00c04fd430e3</uuid>
+                    <expression>last(/IBM DataPower SNMP/datapower.memory.pct)&gt;90</expression>
+                    <name>Критически мало свободной памяти на DataPower</name>
+                    <priority>HIGH</priority>
+                    <description>Использование памяти превышает 90%</description>
+                </trigger>
+                <trigger>
+                    <uuid>6ba7b810-9dad-11d1-80b4-00c04fd430e4</uuid>
+                    <expression>last(/IBM DataPower SNMP/datapower.uptime)&lt;600</expression>
+                    <name>DataPower перезагрузился</name>
+                    <priority>WARNING</priority>
+                    <description>Время работы устройства менее 10 минут</description>
+                </trigger>
+            </triggers>
+            
+            <!-- Графики -->
+            <graphs>
+                <graph>
+                    <uuid>6ba7b810-9dad-11d1-80b4-00c04fd430e5</uuid>
+                    <name>DataPower CPU Usage</name>
+                    <width>900</width>
+                    <height>200</height>
+                    <graph_items>
+                        <graph_item>
+                            <color>FF0000</color>
+                            <item>datapower.cpu.1m</item>
+                        </graph_item>
+                        <graph_item>
+                            <color>00FF00</color>
+                            <item>datapower.cpu.10m</item>
+                        </graph_item>
+                    </graph_items>
+                </graph>
+                <graph>
+                    <uuid>6ba7b810-9dad-11d1-80b4-00c04fd430e6</uuid>
+                    <name>DataPower Memory Usage</name>
+                    <width>900</width>
+                    <height>200</height>
+                    <graph_items>
+                        <graph_item>
+                            <color>0000FF</color>
+                            <item>datapower.memory.used</item>
+                        </graph_item>
+                        <graph_item>
+                            <color>00FF00</color>
+                            <item>datapower.memory.free</item>
+                        </graph_item>
+                    </graph_items>
+                </graph>
+            </graphs>
+        </template>
+    </templates>
+</zabbix_export>
